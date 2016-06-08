@@ -36,7 +36,13 @@ public class Task {
                 '}';
     }
 
-    public Map toMap(){
+    public void apply(Task task) {
+        title = task.title;
+        description = task.description;
+        assignee = task.assignee;
+    }
+
+    public Map toMap() {
         Map map = new HashMap<>();
         map.put("id", this.id);
         map.put("title", this.title);
